@@ -10,6 +10,4 @@ The Single Cycle Processor Design Specification:
 
 Enhanced Datapath for jal: 
 
-![image](https://user-images.githubusercontent.com/37037342/232227130-467794d7-d070-4f97-81e4-020c1a853571.png)
-
-![image](https://user-images.githubusercontent.com/37037342/232227196-5d878978-8793-4c3c-a52d-8207da7e9b2a.png)
+![image](https://user-images.githubusercontent.com/37037342/232227130-467794d7-d070-4f97-81e4-020c1a853571.png) ![image](https://user-images.githubusercontent.com/37037342/232227196-5d878978-8793-4c3c-a52d-8207da7e9b2a.png)
