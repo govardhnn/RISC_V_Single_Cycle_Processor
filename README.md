@@ -2,7 +2,8 @@
 
 My implementation of the RISC-V Single Cycle Processor 
 
-Reference Textbook: `Digital Design and Computer Architecture: RISC-V Edition by Sarah L. Harris and David Harris` 
+Reference Textbook:\
+`Digital Design and Computer Architecture: RISC-V Edition by Sarah L. Harris and David Harris` 
 
 The Single Cycle Processor Design Specification: 
 
