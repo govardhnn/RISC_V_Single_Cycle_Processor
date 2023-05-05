@@ -23,11 +23,12 @@
 module Control_Unit(
 		    input wire [6:0]  op,
 		    input wire [2:0]  funct3,
-		    input wire	      funct7b5, Zero,
+		    input wire	      funct7b5, Zero, // function 7 is the 5th bit
+
 		    output wire [1:0] ResultSrc,
 		    output wire	      MemWrite, PCSrc, ALUSrc, RegWrite,Jump,
 		    output wire [1:0] ImmSrc,
-		    output wire [2:0] ALUControl
+		    output wire [5:0] ALUControl
 		    );
 
    wire [1:0]			      ALUop;

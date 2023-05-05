@@ -22,24 +22,24 @@
  */
 
 module Core_Datapath(
-		     input 	   clk,reset,
+		     input	   clk,reset,
 		     input [1:0]   ResultSrc,
-		     input 	   PCSrc,ALUSrc,
-		     input 	   RegWrite,
+		     input	   PCSrc,ALUSrc,
+		     input	   RegWrite,
 		     input [1:0]   ImmSrc,
-		     input [2:0]   ALUControl,
+		     input [4:0]   ALUControl,
 		     input [31:0]  Instr,
 		     input [31:0]  ReadData,
 
-		     output 	   Zero,
+		     output	   Zero,
 		     output [31:0] PC,
 		     output [31:0] ALUResult,WriteData
 		     );
 
-   wire [31:0] 			   PCnext,PCplus4,PCtarget;
-   wire [31:0] 			   ImmExt;
-   wire [31:0] 			   SrcA,SrcB;
-   wire [31:0] 			   Result;
+   wire [31:0]			   PCnext,PCplus4,PCtarget;
+   wire [31:0]			   ImmExt;
+   wire [31:0]			   SrcA,SrcB;
+   wire [31:0]			   Result;
 
 
    PC PC_inst (

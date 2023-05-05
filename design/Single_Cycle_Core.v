@@ -31,7 +31,7 @@ module Single_Cycle_Core(
 
    wire 				    ALUSrc, RegWrite, Jump, Zero, PCSrc;
    wire [1:0] 				    ResultSrc,ImmSrc;
-   wire [2:0] 				    ALUControl;
+   wire [4:0] 				    ALUControl;
 
    Control_Unit Control(
 			.op(Instr[6:0]),
