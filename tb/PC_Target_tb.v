@@ -20,32 +20,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+module PC_Target_tb;
 
-module ALU(
-	   input wire [31:0]  A,B,
-	   input wire [2:0]   ALUControl,
-	   output wire 	      Zero,
-	   output wire [31:0] Result );
+   reg [31:0] PC;
+   reg [31:0] ImmExt;
+   wire [31:0] PCTarget;
 
-   reg [31:0] 		      ResultReg;
-   wire [31:0] 		      temp1,Sum;
-   wire 		      V,slt; //overflow
+   PC_Target PC_Target_tb_inst (.PC(PC), .ImmExt(ImmExt), .PCTarget(PCTarget));
 
-   assign temp1 = ALUControl[0] ? ~B:B;
-   assign Sum = A + temp1 + ALUControl[0];
-   assign V = ((~ALUControl[1]) & (A[31]^Sum[31]) & (~ALUControl[0]^A[31]^B[31]));
-   assign slt = V^Sum[31];
+   initial begin
+      PC = 32'd12345678;
+      ImmExt = 32'd4;
+      #10;
+      PC = 32'd87654321;
+      ImmExt = 32'd10;
+      #10;
+      $finish;
+   end 
 
-   always@(*)
-     case(ALUControl)
-       3'b000: ResultReg <= Sum; //add
-       3'b001: ResultReg <= Sum; //sub
-       3'b010: ResultReg <= A&B; //and
-       3'b011: ResultReg <= A|B; //or
-       3'b101: ResultReg <= {31'b0,slt}; //slt
-     endcase
-
-   assign Zero = (ResultReg == 32'b0);
-   assign Result = ResultReg;
+   initial begin
+      $monitor("At time %d, PCTarget = %d", $time, PCTarget);
+   end
 
 endmodule
