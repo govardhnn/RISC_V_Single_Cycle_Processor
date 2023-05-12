@@ -28,7 +28,7 @@ module Control_Unit(
 		    output wire [1:0] ResultSrc,
 		    output wire	      MemWrite, PCSrc, ALUSrc, RegWrite,Jump,
 		    output wire [1:0] ImmSrc,
-		    output wire [5:0] ALUControl
+		    output wire [3:0] ALUControl
 		    );
 
    wire [1:0]			      ALUop;

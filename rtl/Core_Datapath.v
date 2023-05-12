@@ -27,7 +27,7 @@ module Core_Datapath(
 		     input	   PCSrc,ALUSrc,
 		     input	   RegWrite,
 		     input [1:0]   ImmSrc,
-		     input [4:0]   ALUControl,
+		     input [3:0]   ALUControl,
 		     input [31:0]  Instr,
 		     input [31:0]  ReadData,
 

@@ -20,9 +20,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+ 
 module ALU(
 	   input wire [31:0]  A,B,
-	   input wire [4:0]   ALUControl,
+	   input wire [3:0]   ALUControl,
 	   output wire	      Zero,
 	   output wire [31:0] Result );
 
@@ -48,16 +49,16 @@ module ALU(
 
    always@(*)
      case(ALUControl)
-       5'b00000: ResultReg <= Sum; //add
-       5'b00001: ResultReg <= Sum; //sub
-       5'b00010: ResultReg <= A&B; //and
-       5'b00011: ResultReg <= A|B; //or
-       5'b00100: ResultReg <= A^B; //xor
-       5'b00101: ResultReg <= {31'b0,slt}; //slt
-       5'b00110: ResultReg <= {31'b0,sltu}; // sltu
-       5'b00111: ResultReg <= {A[31:12],12'b0}; //lui
-       5'b01000: ResultReg <= A + {B[31:12],12'b0}; // AUIPC
-       5'b01001: ResultReg <= {B[31:12],12'b0}; // LUI
+       4'b0000: ResultReg <= Sum; //add
+       4'b0001: ResultReg <= Sum; //sub
+       4'b0010: ResultReg <= A&B; //and
+       4'b0011: ResultReg <= A|B; //or
+       4'b0100: ResultReg <= A^B; //xor
+       4'b0101: ResultReg <= {31'b0,slt}; //slt
+       4'b0110: ResultReg <= {31'b0,sltu}; // sltu
+       4'b0111: ResultReg <= {A[31:12],12'b0}; //lui
+       4'b1000: ResultReg <= A + {B[31:12],12'b0}; // AUIPC
+       4'b1001: ResultReg <= {B[31:12],12'b0}; // LUI
        default:  ResultReg <= 'bx;
 
      endcase
