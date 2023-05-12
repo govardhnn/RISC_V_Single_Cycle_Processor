@@ -9,6 +9,17 @@ The Single Cycle Processor Design Specification:
 
 ![image](https://user-images.githubusercontent.com/37037342/232227351-18115bc2-6f23-4f39-a2f4-f87c626f9750.png)
 
+## Instructions implemented
+
+| Type | Instructions |Implemented|
+|------|--------|----|
+| R    | ADD, SUB, SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND, FENCE, FENCE.I | ADD, SUB, SLT, SLTU, XOR, OR, AND   |
+| I    | JALR, LB, LH, LW, LBU, LHU, ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI, ECALL, EBREAK, CSRRW, CSRRS, CSRRC, CSRRWI, CSRRSI, CSRRCI | ADDI, SLTI, SLTUI, XORI, ORI, ANDI  |
+| S    | SB, SH, SW | |
+| B    | BEQ, BNE, BLT, BGE, BLTU, BGEU | |
+| U    | LUI, AUIPC | |
+| J    | JAL | JAL |
+
 ## Directory Structure 
 
 ```├── instructions.txt
