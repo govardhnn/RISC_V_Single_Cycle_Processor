@@ -17,7 +17,7 @@ The Single Cycle Processor Design Specification:
 | I    | JALR, LB, LH, LW, LBU, LHU, ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI, ECALL, EBREAK, CSRRW, CSRRS, CSRRC, CSRRWI, CSRRSI, CSRRCI | ADDI, SLTI, SLTUI, XORI, ORI, ANDI  |
 | S    | SB, SH, SW | |
 | B    | BEQ, BNE, BLT, BGE, BLTU, BGEU | |
-| U    | LUI, AUIPC | |
+| U    | LUI, AUIPC | LUI, AUIPC |
 | J    | JAL | JAL |
 
 ## Directory Structure 
