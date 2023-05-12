@@ -20,13 +20,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+module ALU_Mux_tb;
 
-module PC_Mux (
-	       input wire [31:0]  PC_Plus_4,PC_Target,
-	       input wire 	  PCSrc,
-	       output wire [31:0] PC_Next
-	       );
+   reg [31:0] WD;
+   reg [31:0] ImmExt;
+   reg	      ALUSrc;
+   wire [31:0] B;
 
-   assign PC_Next = PCSrc ? PC_Target : PC_Plus_4;
+   ALU_Mux ALU_Mux_tb_inst (.WD(WD), .ImmExt(ImmExt), .ALUSrc(ALUSrc), .B(B));
+
+   initial begin
+      WD = 32'd12345678;
+      ImmExt = 32'd87654321;
+      ALUSrc = 1'b0;
+      #10;
+      ALUSrc = 1'b1;
+      #10;
+      $finish;
+   end 
+
+   initial begin
+      $monitor("At time %d, B = %h", $time, B);
+   end
 
 endmodule
+
