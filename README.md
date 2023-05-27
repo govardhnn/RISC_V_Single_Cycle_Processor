@@ -13,13 +13,16 @@ The Single Cycle Processor Design Specification:
 
 | Type | Instructions |Implemented|
 |------|--------|----|
-| R    | ADD, SUB, SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND, FENCE, FENCE.I | ADD, SUB, SLT, SLTU, XOR, OR, AND   |
-| I    | JALR, LB, LH, LW, LBU, LHU, ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI, ECALL, EBREAK, CSRRW, CSRRS, CSRRC, CSRRWI, CSRRSI, CSRRCI | ADDI, SLTI, SLTUI, XORI, ORI, ANDI  |
-| S    | SB, SH, SW | |
-| B    | BEQ, BNE, BLT, BGE, BLTU, BGEU | |
+| R  (all)  | ADD, SUB, SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND| ADD, SUB, SLT, SLTU, XOR, SRL, SRA, OR, AND |
+| I   | JALR, LB, LH, LW, LBU, LHU, ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI| LB, LH, LW, LBU, LHU, ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI |
+| S    | SB, SH, SW | SB, SH, SW |
+| B    | BEQ, BNE, BLT, BGE, BLTU, BGEU | BEQ |
 | U    | LUI, AUIPC | LUI, AUIPC |
-| J    | JAL | JAL |
+| J    | JAL | |
 
+
+(25 out of 32 instructions work currently)
+(~ JALR, BNE, BLT, BGE, BLTU, BGEU, JAL) 
 ## Directory Structure 
 
 ```├── instructions.txt
