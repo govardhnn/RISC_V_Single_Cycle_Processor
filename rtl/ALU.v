@@ -22,10 +22,10 @@
  */
  
 module ALU(
-	   input wire [31:0]  A,B,
-	   input wire [3:0]   ALUControl,
-	   output wire	      Zero,
-	   output wire [31:0] Result );
+	   input wire signed [31:0]  A,B, // made it signed for sra to work
+	   input wire signed [3:0]   ALUControl,
+	   output wire signed	      Zero,
+	   output wire signed [31:0] Result );
 
    reg [31:0]		      ResultReg;
    wire [31:0]		      temp,Sum;
