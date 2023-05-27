@@ -52,6 +52,10 @@ module Control_Unit(
 			   .ALUOp(ALUop),
 			   .ALUControl(ALUControl) );
    
+   //for branches beq, bne, blt, bge, bltu, bgeu
+   //make modifications later - get sign from ALU, make conditions for all branches  
+  
    assign PCSrc = Branch & Zero | Jump;
-
+    
+   
 endmodule
