@@ -13,7 +13,7 @@ The Single Cycle Processor Design Specification:
 
 | Type | Instructions |Implemented|
 |------|--------|----|
-| R  (all)  | ADD, SUB, SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND| ADD, SUB, SLT, SLTU, XOR, SRL, SRA, OR, AND |
+| R  | ADD, SUB, SLL, SLT, SLTU, XOR, SRL, SRA, OR, AND| ADD, SUB, SLT, SLTU, XOR, SRL, SRA, OR, AND |
 | I   | JALR, LB, LH, LW, LBU, LHU, ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI| LB, LH, LW, LBU, LHU, ADDI, SLTI, SLTIU, XORI, ORI, ANDI, SLLI, SRLI, SRAI |
 | S    | SB, SH, SW | SB, SH, SW |
 | B    | BEQ, BNE, BLT, BGE, BLTU, BGEU | BEQ |
@@ -21,7 +21,7 @@ The Single Cycle Processor Design Specification:
 | J    | JAL | |
 
 
-(25 out of 32 instructions work currently)
+(25 instructions work currently)
 (~ JALR, BNE, BLT, BGE, BLTU, BGEU, JAL) 
 ## Directory Structure 
 
